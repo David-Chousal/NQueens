@@ -9,13 +9,13 @@ void solve(int n, int col, int *hist) {
 			for (int j = 0; j < n; j++) {
 				if (j == hist[i]) {
    					 putchar('Q');
-} else if ((i + j) & 1) {
+					} else if ((i + j) & 1) {
         					putchar(' ');
     				} else {
         					putchar('.');
    				}
-}
-}
+			}
+		}
 		return;
 	}
 }
@@ -23,8 +23,8 @@ void solve(int n, int col, int *hist) {
 	for (int i = 0, j = 0; i < n; i++) {
 		for (j = 0; j < col && !attack(i, j); j++);
 		if (j < col) {
-continue;
-}
+			continue;
+		}
 		hist[col] = i;
 		solve(n, col + 1, hist);
 	}
@@ -34,5 +34,3 @@ int main(int n, char **argv) {
 	int hist[n];
 	solve(n, 0, hist);
 }
-
-
